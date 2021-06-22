@@ -1,0 +1,21 @@
+import java.util.Iterator;
+
+public class Avvio {
+
+	public static void main(String[] args) {
+		int[] array = {1,45,3,12,21};
+		int min = array.length;
+		int max = array[0];
+		for (int i = 0; i < array.length; i++) {
+			if(array[i]>max) {
+				max = array[i];
+				System.out.println("Il valore massimo è: " + array[i]);
+			}
+			if(array[i]<min) {
+				min = array[i];
+				System.out.println("Il valore minimo è: " + array[i]);
+			}
+		}
+		
+	}		
+}

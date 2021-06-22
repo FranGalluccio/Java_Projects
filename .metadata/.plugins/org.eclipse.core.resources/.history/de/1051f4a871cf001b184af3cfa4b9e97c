@@ -1,0 +1,18 @@
+package model;
+
+import java.util.Date;
+
+public class VideoGame {
+
+	private int id;
+	private String nome;
+	private String genere;
+	private double prezzo;
+	private Date dataUscita;
+	private String softwareHouse;
+	private boolean retrocompatibilita;
+	
+	public VideoGame(int id, String nome, String genere, double prezzo, Date dataUscita, String softwareHouse, boolean compatibilita) {
+		this.id
+	}
+}

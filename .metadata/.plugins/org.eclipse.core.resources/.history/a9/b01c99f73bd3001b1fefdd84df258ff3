@@ -1,0 +1,78 @@
+import java.util.Scanner;
+
+
+public class Utility {
+	Scanner input = new Scanner(System.in);
+
+	public int leggiIntero(String suggerimento) {
+
+		boolean flag = false;
+		int leggiIntero = 0;
+		do {
+			flag = false;
+			try {
+
+				System.out.println(suggerimento);
+				leggiIntero = Integer.parseInt(input.nextLine());
+			} catch(Exception e) {
+				System.out.println("inserire un valore numerico intero");
+				flag = true;
+			}
+		}while (flag);
+		return leggiIntero;
+	}
+
+
+
+	public int[] swapInt(int[] array) {
+		int tmp = array[0];
+		array[0] = array[1];
+		array[1] = tmp;	
+		return array;
+	}
+
+	public String[] swapString(String[] string) {
+		String tmp = string[0];
+		string[0] = string[1];
+		string[1] = tmp;
+		return string;
+	}
+
+	public String swapS(String string1, String string2) {
+		String temp = "";
+		temp = string1;
+		string1 = string2;
+		string2 = temp;
+		return string1 +" "+ string2;
+	}
+
+	public void swapN(Integer n1, Integer n2) {
+		Integer tmp = 0;
+		tmp = n1;
+		n1 = n2;
+		n2 = tmp;	
+		System.out.print("Dopo lo scambio: "+ n1 + " " + n2);
+	}
+
+	public void conta(String frase, char lettera){
+		int counter = 0;
+		for(int i= 0; i <= frase.length()-1; i++){
+			if(frase.charAt(i) == lettera)
+				counter++;
+		}
+		System.out.println(lettera + " è presente " + ( counter >=2 || counter == 0? counter +" Volte" : counter +" Volta" ));
+	}
+
+	public void conta2(String frase) {
+		int contaparole=1;
+		for(int i=0; i<frase.length()-1;i++)
+		{
+			contaparole++;
+		}
+		System.out.println("Numero parole contenute: "+contaparole);
+	}	
+
+
+
+
+}

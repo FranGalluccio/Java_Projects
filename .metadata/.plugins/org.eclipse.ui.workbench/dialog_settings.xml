@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ImportExportAction">
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.ExternalProject"/>
+		<item key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID" value="org.eclipse.ui.wizards.export.ZipFile"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.jst.j2ee.internal"/>
+		</list>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.jdt.ui.Java"/>
+		</list>
+	</section>
+	<section name="ZipFileImportWizard">
+	</section>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.ui.wizards.new.file"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.jdt.ui.java/org.eclipse.jdt.debug.ui.java"/>
+			<item value="org.eclipse.wst.jsdt.ui.java"/>
+			<item value="org.eclipse.jpt.jaxb"/>
+			<item value="org.eclipse.jpt.jpa"/>
+			<item value="org.eclipse.jpt.jpa/org.eclipse.jpt.jpa.eclipselink"/>
+			<item value="org.eclipse.pde.PDE"/>
+			<item value="org.eclipse.datatools.sql"/>
+			<item value="org.eclipse.pde.userAssistance"/>
+			<item value="org.eclipse.wst.web.ui"/>
+			<item value="org.eclipse.jst.ws.ui.new"/>
+			<item value="org.eclipse.wst.XMLCategory"/>
+		</list>
+	</section>
+	<section name="ZipFileExportWizard">
+		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="true"/>
+		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
+		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\franc\OneDrive\Desktop\SKill Factory\Gestione_persona_hashmap.zip"/>
+			<item value="C:\Users\franc\OneDrive\Desktop\SKill Factory\Gestione_PersonaCRUD con ArrayList.zip"/>
+			<item value="C:\Users\franc\OneDrive\Desktop\SKill Factory\Gestione_FigureGeometriche.zip"/>
+			<item value="C:\Users\franc\OneDrive\Desktop\SKill Factory\Gestione_Azienda.zip"/>
+			<item value="C:\Users\franc\OneDrive\Desktop\SKill Factory\Esercizio Struttura Selettiva2.zip"/>
+			<item value="C:\Users\franc\OneDrive\Desktop\SKill Factory\Esercizio Struttura Selettiva.zip"/>
+			<item value="C:\Users\franc\OneDrive\Desktop\SKill Factory\Esercizio_ArrayOperazioni.zip"/>
+			<item value="C:\Users\franc\OneDrive\Desktop\SKill Factory\GestioneCarrelloConArray.zip"/>
+			<item value="C:\Users\franc\OneDrive\Desktop\SKill Factory\GestioneChiSei(Polimorfismo).zip"/>
+			<item value="C:\Users\franc\OneDrive\Desktop\GestioneCucinaConVettore.zip"/>
+			<item value="C:\Users\franc\OneDrive\Desktop\Gestione Persona Con Vettore.zip"/>
+			<item value="C:\Users\franc\OneDrive\Desktop\Logica Di Programmazione 2.zip"/>
+			<item value="C:\Users\franc\OneDrive\Desktop\Logica Di Programmazione.zip"/>
+			<item value="C:\Users\franc\OneDrive\Desktop\Esercizio Parco Auto.zip"/>
+		</list>
+	</section>
+	<section name="FileSystemExportWizard">
+		<item key="WizardFileSystemResourceExportPage1.STORE_OVERWRITE_EXISTING_FILES_ID" value="false"/>
+		<item key="WizardFileSystemResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="false"/>
+		<item key="WizardFileSystemResourceExportPage1.STORE_RESOLVE_LINKED_RESOURCES_ID" value="false"/>
+		<list key="WizardFileSystemResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\franc\OneDrive\Desktop\SKill Factory"/>
+		</list>
+	</section>
+</section>

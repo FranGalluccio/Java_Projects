@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;cancella.Dirigente.areaDiInteresse&apos; in &apos;cancella.Dirigente&apos;&#x0D;&#x0A;- Original project: &apos;cancella&apos;&#x0D;&#x0A;- Original element: &apos;cancella.Dirigente.areaDiInteresse&apos;&#x0D;&#x0A;- Getter method name: &apos;getAreaDiInteresse&apos;&#x0D;&#x0A;- Setter method name: &apos;setAreaDiInteresse&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;areaDiInteresse&apos;" flags="589830" getter="getAreaDiInteresse" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;cancella{Dirigente.java[Dirigente^areaDiInteresse" insertion="0" setter="setAreaDiInteresse" stamp="1623401928473" version="1.0" visibility="1"/>
+</session>

@@ -1,0 +1,68 @@
+package model;
+
+public class Quadrato extends FiguraGeometrica{
+
+	private double lato;
+	
+	@Override
+	public String[] getInfoFiguraGeometrica() {
+		String[] informazioni = new String[4];
+		for (int i = 0; i < super.getInfoFiguraGeometrica().length; i++) {
+			informazioni[i] = super.getInfoFiguraGeometrica()[i];
+		}
+		informazioni[3] = "Lato: " + lato;
+		return informazioni;
+	}
+
+	public Quadrato() {
+		super("Quadrato");
+	}
+
+	public Quadrato(String figuraGeometrica) {
+		super(figuraGeometrica);
+	}
+
+	public double getLato() {
+		return lato;
+	}
+	public void setLato(double lato) {
+		this.lato = lato;
+	}
+	@Override
+	public String toString() {
+		return super.toString() + "," + lato;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(lato);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Quadrato other = (Quadrato) obj;
+		if (Double.doubleToLongBits(lato) != Double.doubleToLongBits(other.lato))
+			return false;
+		return true;
+	}
+	
+	@Override
+	public double getArea(){
+		return lato * lato;
+	}
+
+	@Override
+	public double getPerimetro() {
+		return lato * 4;
+	}
+}

@@ -1,0 +1,63 @@
+package controller;
+
+import model.VideoGame;
+import model.VideoGameCRUD;
+import view.Vista;
+
+public class Avvio {
+
+	public static void main(String[] args) {
+		Vista vis = new Vista();
+
+		VideoGameCRUD vgCRUD = new VideoGameCRUD();
+		
+		VideoGame vid = null;
+		
+		boolean exit = true;
+		
+		boolean trovato = false;
+		
+		do {
+			int scelta = vis.leggiIntero("1) inserisci \n2) modifica \n3) cancella \n4) stampa \n5) exit");
+			switch(scelta) {
+			case 1:
+				vid = vis.inserisci();
+				vgCRUD.inserisci(vid);
+				break;
+			case 2: 
+				int sById = vis.leggiIntero("Inserisci l'id del VideoGame che vuoi modificare");
+				if(!vgCRUD.leggi().isEmpty()) {
+				for (VideoGame v : vgCRUD.leggi()) {
+						if(sById == v.getId()) {
+							trovato = true;
+							VideoGame vid2 = vgCRUD.duplica(vid);
+							vis.modifica(vid2);
+							String conferma = vis.leggiStringa("Vuoi modificare? si/no");
+							if(conferma.equalsIgnoreCase("si"))
+							vgCRUD.modifica(vgCRUD.leggi().indexOf(v), vid2);
+						}
+					}
+				}
+				if(!trovato) {
+					System.out.println("Nessun VideoGame trovato");
+				}
+				break;
+			case 3:
+				int cById = vis.leggiIntero("Inserisci l'id del VideoGame che vuoi cancellare");
+				if(!vgCRUD.leggi().isEmpty()) {
+					for (int i = 0; i < vgCRUD.leggi().size(); i++) {
+						
+					}
+				}
+				break;
+			case 4:
+				
+				break;
+			case 5:
+				exit = false;
+				break;
+			}
+		}while(exit);
+	}
+
+}

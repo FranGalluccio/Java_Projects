@@ -1,0 +1,84 @@
+package controller;
+
+import java.util.Collections;
+import java.util.TreeSet;
+
+import model.VideoGame;
+import model.VideoGameCRUD;
+import view.Vista;
+
+public class Avvio {
+
+	public static void main(String[] args) {
+		Vista vis = new Vista();
+
+		VideoGameCRUD vgCRUD = new VideoGameCRUD();
+		
+		VideoGame vid = null;
+		
+		boolean exit = true;
+		
+		boolean trovato = false;
+		
+		TreeSet<VideoGame> tg = null;
+		
+		do {
+			int scelta = vis.leggiIntero("1) inserisci \n2) modifica \n3) cancella \n4) stampa \n10) exit");
+			switch(scelta) {
+			case 1:
+				vid = vis.inserisci();
+				vgCRUD.inserisci(vid);
+				break;
+			case 2: 
+				int sById = vis.leggiIntero("Inserisci l'id del VideoGame che vuoi modificare");
+				if(!vgCRUD.leggi().isEmpty()) {
+				for (VideoGame v : vgCRUD.leggi()) {
+						if(sById == v.getId()) {
+							trovato = true;
+							VideoGame vid2 = vgCRUD.duplica(vid);
+							vis.modifica(vid2);
+							String conferma = vis.leggiStringa("Vuoi modificare? si/no");
+							if(conferma.equalsIgnoreCase("si"))
+							vgCRUD.modifica(vgCRUD.leggi().indexOf(v), vid2);
+							vid2= vid;
+						}
+					}
+				}
+				if(!trovato) {
+					System.out.println("Nessun VideoGame trovato");
+				}
+				break;
+			case 3:
+				int cById = vis.leggiIntero("Inserisci l'id del VideoGame che vuoi cancellare");
+				if(!vgCRUD.leggi().isEmpty()) {
+					for (int i = 0; i < vgCRUD.leggi().size(); i++) {
+						trovato = true;
+						if(cById == vgCRUD.leggi(i).getId()) 
+						System.out.println(vgCRUD.leggi(i).toString());
+						String conferma = vis.leggiStringa("Vuoi cancellare? si/no");
+						if(conferma.equalsIgnoreCase("si")) {
+							vgCRUD.cancella(i);
+							break;
+						}
+					}
+					if(!trovato) {
+						System.out.println("Nessun VideoGame trovato");
+					}
+				}
+				break;
+			case 4:
+				for (int i = 0; i < vgCRUD.leggi().size(); i++) {
+					System.out.println(vgCRUD.leggi(i).toString());
+				}
+				break;
+			case 5:
+				TreeSet<VideoGame> videogame = new TreeSet<VideoGame>(vgCRud.leggi);
+				break;
+			case 10:
+				exit = false;
+				break;
+			}
+		}while(exit);
+	}
+
+}

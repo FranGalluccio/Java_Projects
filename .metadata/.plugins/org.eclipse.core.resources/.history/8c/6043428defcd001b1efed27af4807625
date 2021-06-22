@@ -1,0 +1,69 @@
+package controller;
+
+import model.Animale;
+import model.Cane;
+import model.DelfinoCurioso;
+import model.Uccello;
+import view.Vista;
+
+public class Avvio {
+
+	public static void main(String[] args) {
+		//inserimento
+		//modifica //duplica
+		//cancella
+		//stampe
+		Vista v = new Vista();
+		Animale[] a = null; 
+		int i = 0;
+		boolean exit = true;
+		
+		int quantita = v.leggiIntero("Quanti animali vuoi inserire?");
+		a = new Animale[quantita];
+		
+		do {
+			int scelta = v.leggiIntero("1) inserimento \n2) modifica \n3) cancella \n4) stampa csv \n5) stampa scheda \n6) exit");
+			switch (scelta) {
+			case 1:
+				if(i == a.length) {
+					System.out.println("Limite di inserimento raggiunto...");
+				} else {
+					int scegliAnimale = v.leggiIntero("1) inserisci cane \n2) inserisci uccello \n3) inserisci delfino");
+					switch(scegliAnimale) {	
+					case 1:
+						a[i] = new Cane(v.leggiDouble("Inserisci peso animale: "), v.leggiStringa("Inserisci habitat: "), v.leggiStringa("Inserisci dieta: "));;
+						v.inserimento(a[i]);
+						i++;
+						break;
+					case 2:
+						a[i] = new Uccello(v.leggiDouble("Inserisci peso animale: "), v.leggiStringa("Inserisci habitat: "), v.leggiStringa("Inserisci dieta: "));
+						v.inserimento(a[i]);
+						i++;
+						break;
+					case 3:
+						a[i] = new DelfinoCurioso(v.leggiDouble("Inserisci peso animale: "), v.leggiStringa("Inserisci habitat: "), v.leggiStringa("Inserisci dieta: "));;
+						v.inserimento(a[i]);
+						i++;
+						break;
+					default:
+						System.out.println("scelta non valida");
+					}
+				}
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				exit = false;
+				break;
+			}
+		}while(exit);
+
+	}
+
+}

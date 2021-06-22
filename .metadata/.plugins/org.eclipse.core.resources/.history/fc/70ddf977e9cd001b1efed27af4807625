@@ -1,0 +1,77 @@
+package controller;
+
+import model.Animale;
+import model.Cane;
+import model.Cerchio;
+import model.DelfinoCurioso;
+import model.Quadrato;
+import model.Rettangolo;
+import model.Triangolo;
+import model.Uccello;
+import view.Vista;
+
+public class Avvio {
+
+	public static void main(String[] args) {
+		//inserimento
+		//modifica //duplica
+		//cancella
+		//stampe
+		Vista v = new Vista();
+
+		Animale[] a = null; 
+
+		int i = 0;
+
+		boolean exit = false;
+
+		do {
+			int scelta = v.leggiIntero("1) inserimento \n2) modifica \n3) cancella \n4) stampa csv \n5) stampa scheda \n6) exit");
+			switch (scelta) {
+			case 1:
+				int quantita = v.leggiIntero("Quanti animali vuoi inserire?");
+				a = new Animale[quantita];
+			case 1: 
+				if(i == f.length) {
+					System.out.println("Limite di inserimento raggiunto...");
+				} else {
+					v.menuTipoFiguraGeometrica();
+					int figuraScelta = v.leggiIntero("Scegli una figura");
+					switch(figuraScelta) {	
+					case 1:
+						f[i] = new Cerchio();
+						v.inserimentoFiguraGeometrica(f[i]);
+						i++;
+						break;
+					case 2:
+						f[i] = new Quadrato();
+						v.inserimentoFiguraGeometrica(f[i]);
+						i++;
+						break;
+					case 3:
+						f[i] = new Rettangolo();
+						v.inserimentoFiguraGeometrica(f[i]);
+						i++;
+						break;
+					default:
+						System.out.println("scelta non valida");
+					}
+				}
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				exit = false;
+				break;
+			}
+		}while(exit);
+
+	}
+
+}

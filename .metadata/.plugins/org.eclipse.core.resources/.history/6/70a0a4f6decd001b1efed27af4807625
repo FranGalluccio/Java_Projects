@@ -1,0 +1,30 @@
+package model;
+
+public class Cane extends Animale {
+	
+	private String razza;
+	private String colore;
+	boolean vaccinato;
+	char sesso;
+	@Override
+	public double getPesoAnimale() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public String getTipoAnimale() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String getHabitat() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String getDieta() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

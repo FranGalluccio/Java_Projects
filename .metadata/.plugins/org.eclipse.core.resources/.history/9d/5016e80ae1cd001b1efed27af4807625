@@ -1,0 +1,55 @@
+package model;
+
+import view.Vista;
+
+public class Cane extends Animale {
+	
+	public Cane() {
+		super("Cane", 3.5 , "casa", "Onnivoro");
+	}	
+	public String getRazza() {
+		return razza;
+	}
+	public void setRazza(String razza) {
+		this.razza = razza;
+	}
+	public String getColore() {
+		return colore;
+	}
+	public void setColore(String colore) {
+		this.colore = colore;
+	}
+	public boolean isVaccinato() {
+		return vaccinato;
+	}
+	public void setVaccinato(boolean vaccinato) {
+		this.vaccinato = vaccinato;
+	}
+	public char getSesso() {
+		return sesso;
+	}
+	public void setSesso(char sesso) {
+		this.sesso = sesso;
+	}
+	private String razza;
+	private String colore;
+	boolean vaccinato;
+	char sesso;
+	@Override
+	public double getPesoAnimale() {
+		return this.getPesoAnimale();
+	}
+	@Override
+	public String getTipoAnimale() {
+		return this.getTipoAnimale();
+	}
+	@Override
+	public String getHabitat() {
+		return this.getHabitat();
+	}
+	@Override
+	public String getDieta() {
+		return this.getDieta();
+	}
+
+}

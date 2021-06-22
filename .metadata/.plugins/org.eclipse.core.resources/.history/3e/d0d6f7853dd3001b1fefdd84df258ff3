@@ -1,0 +1,39 @@
+package model;
+
+import java.util.HashMap;
+
+public class PersonaCrud implements IPersonaCrud{
+	
+	HashMap<Persona> persona = new HashMap();
+
+	@Override
+	public void cancella(int index) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void modifica(int index, Persona p) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Persona leggi(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HashMap<Integer, Persona> leggi() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void inserisci(int chiave, Persona p) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

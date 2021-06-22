@@ -1,0 +1,22 @@
+package model;
+
+public abstract class Animale {
+
+	private String tipoAnimale;
+	private double pesoAnimale;
+	private String habitat;
+	private String dieta;
+	
+	public Animale() {
+	}
+	
+	public abstract double getPesoAnimale();
+	
+	public abstract String getTipoAnimale();
+	
+	public abstract String getHabitat();
+	
+	public abstract String getDieta();	
+	
+	
+}

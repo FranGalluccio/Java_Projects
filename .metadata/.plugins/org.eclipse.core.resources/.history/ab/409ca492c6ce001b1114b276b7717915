@@ -1,0 +1,90 @@
+package controller;
+
+import model.Persona;
+import model.PersonaCRUD;
+import view.Vista;
+
+public class Avvio {
+	public static void main(String[] args) {
+		PersonaCRUD pc = new PersonaCRUD();
+		Vista v = new Vista();
+		Persona persona = null;
+
+		boolean exit = true;
+		boolean trovato = false;
+
+		do {
+			int scelta = v.leggiIntero("1) inserisci persone \n2) modifica \n3) stampa \n4) elimina \n5) \n6) cerca per id  \n7) exit");
+			switch (scelta) {
+			case 1: 
+				System.out.println("Inserisci una nuova Persona");
+				v.inserisci(persona);
+				pc.inserisci(persona);
+				break;
+			case 2:
+				int modificaId = v.leggiIntero("Inserisci l'id della persona da modificare");
+				for (int i = 0; i < pc.leggi().size(); i++) {
+					if(modificaId == pc.leggi(i).getId()) {
+						persona = pc.duplica(pc.leggi(i));
+						v.modifica(persona);
+						trovato = true;
+						String conferma = v.leggiStringa("Vuoi modificare");
+						if(conferma.equalsIgnoreCase("si")) {
+							pc.modifica(i, persona);
+							break;
+						}
+					}
+				}
+				if(!trovato) {
+					System.out.println("Nessun id corrispondente");
+				}
+				break;
+			case 3:
+				for (int i = 0; i < pc.leggi().size(); i++) {
+					System.out.println(pc.leggi(i).toString());
+				}
+				
+				break;
+			case 4:
+				int cancella = v.leggiIntero("Inserisci l'id della persona da cancellare");
+				for (int i = 0; i < pc.leggi().size(); i++) {
+					if(cancella == pc.leggi(i).getId()) {
+						trovato = true;
+						String conferma = v.leggiStringa("Vuoi cancellaVe");
+						if(conferma.equalsIgnoreCase("si, sei vomevese")) {
+							pc.cancella(i);
+							break;
+						}
+					}
+				}
+				if(!trovato) {
+					System.out.println("Nessun id corrispondente");
+				}
+				break;
+			case 5:
+				break;
+			case 6:
+				int ricerca = v.leggiIntero("Inserisci l'id della persona da cercare");
+				for (int i = 0; i < pc.leggi().size(); i++) {
+					if(ricerca == pc.leggi(i).getId()) {
+						trovato = true;
+						System.out.println(pc.leggi().toString());
+						break;
+					}
+				}
+				if(!trovato) {
+					System.out.println("Nessun id corrispondente");
+				}
+				break;
+			case 7:
+				exit = false;
+				break;
+
+			default:
+				System.out.println("Valore inaspettato, inserisci un numero compreso nel menu...");
+				break;
+			}
+		} while (exit);
+	}
+
+}

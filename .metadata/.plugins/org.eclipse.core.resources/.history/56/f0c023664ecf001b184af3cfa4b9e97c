@@ -1,0 +1,14 @@
+package controller;
+
+import model.PianetaCRUD;
+
+public class Avvio {
+
+	public static void main(String[] args) {
+		PianetaCRUD CRUD = new PianetaCRUD();
+		
+		
+
+	}
+
+}

@@ -1,0 +1,39 @@
+package model;
+
+import java.util.ArrayList;
+
+import view.Vista;
+
+public class PersonaCRUD implements IPersonaCRUD{
+
+	ArrayList<PersonaCRUD> persone = new ArrayList<PersonaCRUD>();
+	Vista v = new Vista();
+
+	@Override
+	public boolean cancella(int indice) {
+		
+		return false;
+	}
+	@Override
+	public boolean modifica(int indice, PersonaCRUD p) {
+		persone.set(v.leggiIntero("Inserisci la posizione della cella che vuoi modificare"), p);
+		return false;
+	}
+	@Override
+	public PersonaCRUD leggi(int i) {
+		
+		return null;
+	}
+	@Override
+	public ArrayList<PersonaCRUD> leggi() {
+		
+		return null;
+	}
+	@Override
+	public boolean inserisci(PersonaCRUD p) {
+		persone.add(p);
+		return false;
+	}
+
+
+}

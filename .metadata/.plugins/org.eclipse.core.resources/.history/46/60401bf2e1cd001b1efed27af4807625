@@ -1,0 +1,38 @@
+package model;
+
+public class Uccello extends Animale{
+
+	private int velocita;
+	private int aperturaAlare;
+	private String razza;
+	@Override
+	public double getPesoAnimale() {
+		return 0;
+	}
+	@Override
+	public String getTipoAnimale() {
+		return null;
+	}
+	@Override
+	public String getHabitat() {
+		return null;
+	}
+	public int getVelocita() {
+		return velocita;
+	}
+	public void setVelocita(int velocita) {
+		this.velocita = velocita;
+	}
+	public int getAperturaAlare() {
+		return aperturaAlare;
+	}
+	public void setAperturaAlare(int aperturaAlare) {
+		this.aperturaAlare = aperturaAlare;
+	}
+	public String getRazza() {
+		return razza;
+	}
+	public void setRazza(String razza) {
+		this.razza = razza;
+	}
+}

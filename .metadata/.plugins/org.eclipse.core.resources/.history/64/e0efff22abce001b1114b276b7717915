@@ -1,0 +1,36 @@
+package model;
+
+import java.util.ArrayList;
+
+public class PersonaCRUD implements IPersonaCRUD{
+
+	ArrayList<Persona> persone = new ArrayList<Persona>();
+	
+	@Override
+	public boolean inserisci(PersonaCRUD p) {
+		persone.add(p);
+		return false;
+	}
+	@Override
+	public boolean cancella(int indice) {
+		return false;
+	}
+	@Override
+	public boolean modifica(int indice, PersonaCRUD p) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public PersonaCRUD leggi(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public ArrayList<PersonaCRUD> leggi() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+}

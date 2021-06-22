@@ -1,0 +1,11 @@
+package model;
+
+public interface IPersonaCRUD {
+	
+	public boolean inserisci(Persona p);
+	public boolean cancella(int indice);
+	public boolean modifica (int indice, Persona p);
+	public Persona leggi(int i);
+	public ArrayList<Persona> leggi();
+
+}

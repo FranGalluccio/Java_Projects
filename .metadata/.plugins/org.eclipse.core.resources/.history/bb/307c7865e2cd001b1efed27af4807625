@@ -1,0 +1,27 @@
+package model;
+
+public class DelfinoCurioso extends Animale{
+
+	boolean moltoCurioso;
+	private String nome;
+	private double lunghezza;
+
+	public boolean isMoltoCurioso() {
+		return moltoCurioso;
+	}
+	public void setMoltoCurioso(boolean moltoCurioso) {
+		this.moltoCurioso = moltoCurioso;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public double getLunghezza() {
+		return lunghezza;
+	}
+	public void setLunghezza(double lunghezza) {
+		this.lunghezza = lunghezza;
+	}
+}

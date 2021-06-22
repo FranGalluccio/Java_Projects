@@ -1,0 +1,10 @@
+package model;
+
+public class Cane {
+	
+	private String razza;
+	private String colore;
+	boolean vaccinato;
+	boolean sesso;
+
+}

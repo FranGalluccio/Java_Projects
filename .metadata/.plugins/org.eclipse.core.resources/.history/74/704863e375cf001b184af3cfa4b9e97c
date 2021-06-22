@@ -1,0 +1,84 @@
+package view;
+
+import java.util.Date;
+import java.util.Scanner;
+
+import model.VideoGame;
+
+public class Vista {
+
+	Scanner input = new Scanner(System.in);
+
+	public String leggiStringa(String messaggio) {
+		System.out.println(messaggio);
+		return input.nextLine();
+	}
+
+	public int leggiIntero(String messaggio) {
+		System.out.println(messaggio);
+		boolean flag = false;
+		int leggiIntero = 0;
+		do {
+			flag = false;
+			try {
+				System.out.println(messaggio);
+				leggiIntero = Integer.parseInt(input.nextLine());
+
+			} catch (Exception e) {
+				System.out.println("Inserisci un numero");
+				flag = true;
+			}
+
+		}while(flag);
+		return leggiIntero;
+	}
+
+	public double leggiDouble(String messaggio) {
+		System.out.println(messaggio);
+		boolean flag = false;
+		double leggiDouble = 0;
+		do {
+			flag = false;
+			try {
+				System.out.println(messaggio);
+				leggiDouble = Double.parseDouble(input.nextLine());
+
+			} catch (Exception e) {
+				System.out.println("Inserisci un numero");
+				flag = true;
+			}
+
+		}while(flag);
+		return leggiDouble;
+	}
+
+	public boolean leggiBoolean(String messaggio) {
+		boolean ritorno = false;
+		boolean exit = false;
+		String s = "";
+
+		do {
+			s = leggiStringa(messaggio);
+			exit = false;
+			if(s.equalsIgnoreCase("si")) {
+				ritorno = true;
+			}
+			else if(s.equalsIgnoreCase("si")) {
+				ritorno = false;
+			}
+			else {
+				System.out.println("Inserise si o no.");
+				exit = true;
+			}
+
+		}while(exit);
+		return ritorno;
+	}
+
+	public void inserisci() {
+		//int id, String nome, String genere, double prezzo, Date dataUscita, String softwareHouse, boolean retrocompatibilita
+		VideoGame vid = new VideoGame(vid.setId(leggiIntero("Inserisci id: "), vid.setNome(leggiStringa("Inserire nome: "), 
+				vid.setGenere(leggiStringa("Inserisci genere"), vid.setPrezzo(leggiDouble("Inserisci prezzo: "), 
+						);
+	}
+}

@@ -1,0 +1,8 @@
+package model;
+
+public class Uccello {
+
+	private int velocita;
+	private int aperturaAlare;
+	private String razza;
+}

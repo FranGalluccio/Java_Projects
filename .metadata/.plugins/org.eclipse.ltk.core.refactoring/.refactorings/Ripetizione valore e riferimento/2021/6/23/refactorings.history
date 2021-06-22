@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;view.Utility&apos; to &apos;Vista&apos;&#x0D;&#x0A;- Original project: &apos;Ripetizione valore e riferimento&apos;&#x0D;&#x0A;- Original element: &apos;view.Utility&apos;&#x0D;&#x0A;- Renamed element: &apos;view.Vista&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Utility&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;view{Utility.java[Utility" matchStrategy="1" name="Vista" qualified="false" references="true" similarDeclarations="false" stamp="1623140042241" textual="false" version="1.0"/>
+</session>

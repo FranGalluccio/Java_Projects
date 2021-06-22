@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Avvio {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner (System.in);
+
+		System.out.println("Inserisci la parola: ");
+		String parola = input.nextLine();
+
+		int startIndex = 0;
+		int endIndex = parola.length()-1;
+
+		boolean isPalindrom = true;
+
+		for(; startIndex < endIndex; startIndex++, endIndex--){
+		  if(parola.charAt(startIndex) != parola.charAt(endIndex)) {
+			isPalindrom = false;
+			System.out.println("La parola non è palindroma");
+			break;
+			}
+		}
+		if (isPalindrom) {
+		System.out.println("La parola è palindroma");
+		}
+	}		
+}

@@ -1,0 +1,35 @@
+package view;
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Scanner;
+import model.Persona;
+
+public class Vista {
+	Scanner input = new Scanner(System.in);
+	ArrayList<Persona> persona = new ArrayList<Persona>();
+
+	public String leggiStringa(String messaggio) {
+		System.out.println(messaggio);
+		return input.nextLine();
+	}
+
+	public int leggiIntero(String messaggio) {
+		System.out.println(messaggio);
+		return Integer.parseInt(input.nextLine());
+	}
+	
+	public void inserisci(ArrayList<Persona> p) {
+		@SuppressWarnings("deprecation")
+		Date d = new Date(leggiIntero("giorno"), leggiIntero("mese"), leggiIntero("anno"));
+		p.add(new Persona(leggiIntero("Inserisci id: "), leggiStringa("Inserisci nome: "), leggiStringa("Inserisci cognome: "), leggiStringa("Inserisci luogo di nascita"),
+				leggiStringa("Inserisci sesso"), leggiStringa("Inserisci codice fiscale"), d));
+	}
+	
+	public void modifica(ArrayList<Persona> p) {
+		p.set(leggiIntero("Inserisci l'id della persona da modificare"), null);
+	}
+	
+	public void cancella(ArrayList<Persona> p) {
+		
+	}
+}

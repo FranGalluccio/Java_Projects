@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Program.java&apos; to &apos;Esercizio_StrutturaSelettivaPassaggioAstronauta/src/program&apos;&#x0D;&#x0A;- Original project: &apos;Esercizio_StrutturaSelettivaPassaggioAstronauta&apos;&#x0D;&#x0A;- Destination element: &apos;Esercizio_StrutturaSelettivaPassaggioAstronauta/src/program&apos;&#x0D;&#x0A;- Original element: &apos;Program.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;program" element1="/src&lt;{Program.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1621492558670" units="1" version="1.0"/>
+</session>

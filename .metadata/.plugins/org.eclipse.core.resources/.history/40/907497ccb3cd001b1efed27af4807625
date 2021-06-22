@@ -1,0 +1,70 @@
+package controller;
+
+import model.Cerchio;
+import model.Dipendente;
+import model.FiguraGeometrica;
+import model.Quadrato;
+import model.Rettangolo;
+import model.Triangolo;
+import view.Viste;
+
+public class Avvio {
+
+	public static void main(String[] args) {
+
+
+		Viste v = new Viste();
+		FiguraGeometrica[] f = null;
+		boolean exit = true;
+		int i = 0;
+
+		do {
+			v.menuPrincipale();
+			int scelta = v.leggiIntero("Scegli...");
+			switch (scelta) {
+			case 1: 
+				if(f == null) {
+					int quantita =v.leggiIntero("Quante figure vuoi inserire?");
+					f = new FiguraGeometrica[quantita];
+					v.menuTipoFiguraGeometrica();
+					int figuraScelta = v.leggiIntero("Scegli una figura");
+					switch(figuraScelta) {	
+
+
+					case 1:
+						f = new Cerchio();
+						v.inserimentoFiguraGeometrica(f[i]);
+						f.getInfoFiguraGeometrica();
+						i++;
+						break;
+					case 2:
+						f = new Quadrato();
+						v.inserimentoFiguraGeometrica(f[i]);
+						i++;
+						break;
+					case 3:
+						f = new Rettangolo();
+						v.inserimentoFiguraGeometrica(f);
+						break;
+					case 4:
+						f = new Triangolo();
+						v.inserimentoFiguraGeometrica(f);
+						break;
+					default:
+						System.out.println("scelta non valida");
+					}
+				}
+				break;
+			case 2:
+				v.stampaInformazioni(f);
+				break;
+			case 3:
+				exit = true;
+				break;
+			default:
+				System.out.println("scelta non valida");
+			}
+		}while(exit);
+	}
+
+}

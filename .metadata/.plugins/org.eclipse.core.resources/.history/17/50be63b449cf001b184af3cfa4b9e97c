@@ -1,0 +1,63 @@
+package model;
+
+import java.util.Date;
+
+public class Pianeta {
+
+	private String nome;
+	private double massa;
+	private boolean abitato;
+	private String colore;
+	private double temperatura;
+	private Date dataScoperta;
+	public Pianeta(String nome, double massa, boolean abitato, String colore, double temperatura, Date dataScoperta) {
+		super();
+		this.nome = nome;
+		this.massa = massa;
+		this.abitato = abitato;
+		this.colore = colore;
+		this.temperatura = temperatura;
+		this.dataScoperta = dataScoperta;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public double getMassa() {
+		return massa;
+	}
+	public void setMassa(double massa) {
+		this.massa = massa;
+	}
+	public boolean isAbitato() {
+		return abitato;
+	}
+	public void setAbitato(boolean abitato) {
+		this.abitato = abitato;
+	}
+	public String getColore() {
+		return colore;
+	}
+	public void setColore(String colore) {
+		this.colore = colore;
+	}
+	public double getTemperatura() {
+		return temperatura;
+	}
+	public void setTemperatura(double temperatura) {
+		this.temperatura = temperatura;
+	}
+	public Date getDataScoperta() {
+		return dataScoperta;
+	}
+	public void setDataScoperta(Date dataScoperta) {
+		this.dataScoperta = dataScoperta;
+	}
+	@Override
+	public String toString() {
+		return nome + "," + massa + "," + abitato + "," + colore
+				+ "," + temperatura + "," + dataScoperta;
+	}
+}

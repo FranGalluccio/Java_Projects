@@ -1,0 +1,25 @@
+package model;
+
+public class Manager extends Persona{
+	private String areaDiResponsabilita;
+
+	public Manager(int id, String nome, String cognome, String luogoDiNascita, String sesso, String codiceFiscale, String areaDiResponsabilita) {
+		super(id, nome, cognome, luogoDiNascita, sesso, codiceFiscale);
+		this.areaDiResponsabilita = areaDiResponsabilita;
+	}
+
+	public String getAreaDiResponsabilita() {
+		return areaDiResponsabilita;
+	}
+
+	public void setAreaDiResponsabilita(String areaDiResponsabilita) {
+		this.areaDiResponsabilita = areaDiResponsabilita;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + "," + areaDiResponsabilita + "]";
+	}
+	
+	
+}

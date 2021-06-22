@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;view.View&apos; to &apos;Views&apos;&#x0D;&#x0A;- Original project: &apos;GestioneFruta&apos;&#x0D;&#x0A;- Original element: &apos;view.View&apos;&#x0D;&#x0A;- Renamed element: &apos;view.Views&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;View&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;view{View.java[View" matchStrategy="1" name="Views" qualified="false" references="true" similarDeclarations="false" stamp="1622817279504" textual="false" version="1.0"/>
+</session>

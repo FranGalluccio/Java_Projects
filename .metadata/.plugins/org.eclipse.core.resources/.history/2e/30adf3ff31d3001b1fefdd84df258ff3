@@ -1,0 +1,9 @@
+import java.util.UUID;
+
+public class Avvio {
+
+	public static void main(String[] args) {
+		UUID uniqueID = UUID.randomUUID();
+		System.out.println(uniqueID);
+	}		
+}

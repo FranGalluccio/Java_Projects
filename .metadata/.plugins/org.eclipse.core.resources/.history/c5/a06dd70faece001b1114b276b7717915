@@ -1,0 +1,58 @@
+package model;
+
+import java.util.ArrayList;
+
+import view.Vista;
+
+public class PersonaCRUD implements IPersonaCRUD{
+
+	ArrayList<PersonaCRUD> persone = new ArrayList<PersonaCRUD>();
+	Vista v = new Vista();
+
+	@Override
+	public boolean cancella(int indice) {
+		boolean riuscito = false;
+		if(persone != null) {
+			persone.remove(indice);
+			riuscito = true;
+		} else {
+			riuscito = false;
+		} 
+		return riuscito;
+	}
+	@Override
+	public boolean modifica(int indice, PersonaCRUD p) {
+		boolean riuscito = false;
+		if(persone != null) {
+			persone.set((indice), p);
+			riuscito = true;
+		} else {
+			riuscito = false;
+		} 
+		return riuscito;
+	}
+	@Override
+	public PersonaCRUD leggi(int i) {
+		
+		return null;
+	}
+	@Override
+	public ArrayList<PersonaCRUD> leggi() {
+		
+		return null;
+	}
+	@Override
+	public boolean inserisci(PersonaCRUD p) {
+		boolean riuscito = false;
+		if(persone != null) {
+			persone.add(p);
+			riuscito = true;
+		} else {
+			riuscito = false;
+		} 
+		return riuscito;
+	}
+	}
+
+
+}

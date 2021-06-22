@@ -1,0 +1,9 @@
+package model;
+
+public abstract class Animale {
+
+	private String tipoAnimale;
+	private double pesoAnimale;
+	private String stazza;
+	private String habitat;
+}

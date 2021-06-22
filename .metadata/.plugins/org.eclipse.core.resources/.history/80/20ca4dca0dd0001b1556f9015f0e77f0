@@ -1,0 +1,29 @@
+package model;
+
+public class Dipendente extends Persona{
+	
+	private double stipendio;
+	private String ruoloAziendale;
+	public Dipendente(int id, String nome, String cognome, String luogoDiNascita, String sesso, String codiceFiscale, double stipendio, String ruoloAziendale) {
+		super(id, nome, cognome, luogoDiNascita, sesso, codiceFiscale);
+		this.stipendio = stipendio;
+		this.ruoloAziendale = ruoloAziendale;
+		
+	}
+	public double getStipendio() {
+		return stipendio;
+	}
+	public void setStipendio(double stipendio) {
+		this.stipendio = stipendio;
+	}
+	public String getRuoloAziendale() {
+		return ruoloAziendale;
+	}
+	public void setRuoloAziendale(String ruoloAziendale) {
+		this.ruoloAziendale = ruoloAziendale;
+	}
+	@Override
+	public String toString() {
+		return super.toString() + "," + stipendio + "," + ruoloAziendale;
+	}
+}

@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <style type="text/css">
+    
+        body{
+            background-color:deepskyblue
+            color: black;
+        }
+        
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+    <body>
+ 
+    <form id = "form" action="Login">
+        <label>Username</label>
+        <input type = "text" id = "input-user" name = "username" placeholder = "Inserisci username"><br>
+        <small id = "user-small"></small>
+        <br>
+        <br>      
+        <label>Password</label>
+        <input type = "password" id = "input-psw" name = "password" placeholder = "Inserisci password"><br>
+	   <small id = "psw-small"></small><br><br>
+	
+	   <button id = "button-login" type = "button">Accedi</button>   			
+    </form>
+    
+    <script>
+
+			function validazioneDati()
+			{
+				var inserito = "";			
+                var boolUser = true, boolPsw = true;
+                
+				inserito = document.getElementById("input-user").value;
+				if(inserito === "" || inserito === "undefined")
+				{
+					document.getElementById("input-user").style.backgroundColor = "#d63031";
+                    document.getElementById("user-small").innerHTML = "Username e' un campo obbligatorio!";
+                    boolUser = false;
+				}
+                
+                inserito = document.getElementById("input-psw").value;
+               	if(inserito === "" || inserito === "undefined")
+				{
+					document.getElementById("input-psw").style.backgroundColor = "#d63031";
+                    document.getElementById("psw-small").innerHTML = "Password e' un campo obbligatorio!";
+                    boolPsw = false;
+				}
+                
+                if(boolUser && boolPsw)
+                {
+                    return true;
+                }
+                
+                else
+                {
+                    return false;
+                }
+			}
+           
+			document.getElementById("button-login").onclick = function()
+            {
+				if(validazioneDati())
+                {
+                    document.getElementById("form").submit();
+                }
+			}
+            
+            
+            document.getElementById("input-user").onclick = function()
+            {
+                inserito = document.getElementById("input-user").value;
+                if(inserito === "")
+				{
+					document.getElementById("input-user").style.backgroundColor = "white";
+                    document.getElementById("user-small").innerHTML = "";
+				}
+            }
+            
+            
+            document.getElementById("input-psw").onclick = function()
+            {
+                inserito = document.getElementById("input-psw").value;
+                if(inserito === "")
+				{
+					document.getElementById("input-psw").style.backgroundColor = "white";
+                    document.getElementById("psw-small").innerHTML = "";
+				}
+            }		
+        
+    </script>
+        
+    </body>
+
+
+</html>

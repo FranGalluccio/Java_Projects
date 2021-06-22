@@ -1,0 +1,54 @@
+package view;
+
+import java.util.Scanner;
+
+public class Vista {
+	
+	Scanner input = new Scanner(System.in);
+	
+	public String leggiStringa(String messaggio) {
+		System.out.println(messaggio);
+		return input.nextLine();
+	}
+	
+	public int leggiIntero(String messaggio) {
+		System.out.println(messaggio);
+		boolean flag = false;
+		int leggiIntero = 0;
+		do {
+			flag = false;
+			try {
+				System.out.println(messaggio);
+				leggiIntero = Integer.parseInt(input.nextLine());
+				
+			} catch (Exception e) {
+				System.out.println("Inserisci un numero intero");
+				flag = true;
+			}
+			
+		}while(flag);
+		return leggiIntero;
+	}
+	
+	public double leggiDouble(String messaggio) {
+		System.out.println(messaggio);
+		boolean flag = false;
+		double leggiDouble = 0;
+		do {
+			flag = false;
+			try {
+				System.out.println(messaggio);
+				leggiDouble = Double.parseDouble(input.nextLine());
+				
+			} catch (Exception e) {
+				System.out.println("Inserisci un numero intero");
+				flag = true;
+			}
+			
+		}while(flag);
+		return leggiDouble;
+	}
+	
+	
+
+}

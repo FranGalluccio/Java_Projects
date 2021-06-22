@@ -1,0 +1,12 @@
+package model;
+
+import java.util.HashMap;
+
+public interface IPersonaCrud {
+
+	public void cancella(String indice);
+	public void modifica (String indice, Persona p);
+	public Persona leggi(Persona p);
+	public HashMap<String, Persona> leggi();
+	void inserisci(String chiave, Persona p);
+}

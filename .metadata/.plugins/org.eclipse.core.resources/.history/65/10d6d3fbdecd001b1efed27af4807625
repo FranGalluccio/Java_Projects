@@ -1,0 +1,28 @@
+package model;
+
+public class Uccello extends Animale{
+
+	private int velocita;
+	private int aperturaAlare;
+	private String razza;
+	@Override
+	public double getPesoAnimale() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public String getTipoAnimale() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String getHabitat() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String getDieta() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;Esercizio_Collections&apos; to &apos;Gestione_PersonaCRUD con ArrayList&apos;&#x0D;&#x0A;- Original element: &apos;Esercizio_Collections&apos;&#x0D;&#x0A;- Renamed element: &apos;Esercizio_Collections&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;Esercizio_Collections&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=Esercizio_Collections" name="Gestione_PersonaCRUD con ArrayList" references="true" stamp="1623911415087" version="1.0"/>
+</session>

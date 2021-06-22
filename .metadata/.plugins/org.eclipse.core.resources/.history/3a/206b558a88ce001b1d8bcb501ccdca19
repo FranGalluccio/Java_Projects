@@ -1,0 +1,27 @@
+package model;
+
+import java.util.ArrayList;
+
+public class Collezioni {
+
+	public void insieme() {​​
+	ArrayList<Persona> persone=new ArrayList<>(); //Di genere
+
+	persone.add(new Persona("Mario","Rossi",20));
+	persone.add(new Persona("Paola","Rossi",30));
+	persone.add(new Persona("Ugo","Verdi",40));
+	persone.add(new Persona("Mario","Rossi",20));
+	persone.add(new Persona("Ugo","Verdi",40));
+	persone.add(new Persona("Renato","Bianchi",45));
+	persone.add(new Persona("Carla","Bianchi",19));
+	persone.add(new Persona("Rossella","Rossi",40));
+	persone.add(new Persona("Ugo","Verdi",40));
+	persone.add(new Persona("Renato","Bianchi",45));
+	persone.add(new Persona("Mario","Rosa",45));
+	System.out.println("----1) Elenco persone in ordine Naturale ----");​​
+	for(Persona persona:persone) {​​
+		System.out.println(persona.toString());
+	}​​
+
+	}
+}

@@ -1,0 +1,16 @@
+package model;
+
+public class Dipendente extends Persona{
+	
+	private double stipendio;
+	private String ruoloAziendale;
+	public Dipendente(int id, String nome, String cognome, String luogoDiNascita, String sesso, String codiceFiscale, String stipendio, double ruoloAziendale) {
+		super(id, nome, cognome, luogoDiNascita, sesso, codiceFiscale);
+		this.stipendio = stipendio;
+		this.ruoloAziendale = ruoloAziendale;
+		
+	}
+	
+	
+
+}

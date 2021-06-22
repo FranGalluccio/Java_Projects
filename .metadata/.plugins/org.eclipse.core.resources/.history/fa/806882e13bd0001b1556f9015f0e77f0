@@ -1,0 +1,37 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class PersonaCrud implements IPersonaCrud{
+	
+	HashMap<Integer,Persona> azienda= new HashMap<Integer,Dipendente>();
+
+
+
+	//create
+	public void inserisci(int chiave,Persona p) {
+	azienda.put(chiave, d); //add
+	}
+
+	//update
+	public void modifica(int chiave, Persona p) {
+	azienda.replace(chiave, d); //set
+	}
+
+	//delete
+	public void cancella(int chiave) {
+	azienda.remove(chiave);
+	}
+
+	//read entità
+	public Dipendente leggi(int chiave) {
+	return azienda.get(chiave);
+	}
+
+	//read
+	public HashMap<Integer,Dipendente> leggi(){
+	return azienda;
+	}
+	
+}

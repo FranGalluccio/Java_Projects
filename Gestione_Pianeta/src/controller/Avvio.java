@@ -1,0 +1,96 @@
+package controller;
+
+import model.Pianeta;
+import model.PianetaCRUD;
+import view.Vista;
+
+public class Avvio {
+
+	public static void main(String[] args) {
+		PianetaCRUD pCRUD = new PianetaCRUD();
+
+		Vista v = new Vista();
+		Pianeta pianeta = null;
+
+		boolean exit = true;
+		boolean trovato = false;
+
+		do {
+			int scelta = v.leggiIntero("1) inserisci pianeta \n2) modifica \n3) stampa csv \n4) elimina \n5) stampa scheda \n6) cerca per id \n7) exit");
+			switch (scelta) {
+			case 1: 
+				pianeta = v.inserisci();
+				pCRUD.inserisci(pianeta);
+				break;
+			case 2:
+				int modifica = v.leggiIntero("inserisci l'id del pianeta da modificare"); 
+					if(!pCRUD.leggi().isEmpty())
+						for (Pianeta p : pCRUD.leggi()) {
+							if (modifica == p.getId()) {
+								Pianeta p2 = pCRUD.duplica(p);
+								v.modifica(p2);
+								String risposta = v.leggiStringa("Vuoi modificare? si/no");
+								if(risposta.equalsIgnoreCase("si"))
+								pCRUD.modifica(pCRUD.leggi().indexOf(p), p2);
+							}
+						}
+				break;
+			case 3:
+				if(!pCRUD.leggi().isEmpty()) {
+					for (int i = 0; i < pCRUD.leggi().size(); i++) {
+						System.out.println(pCRUD.leggi(i).toString());
+					}
+				}
+				else {
+					System.out.println("Nessun elemento da stampare");
+				}
+
+				break;
+			case 4:
+				int cancella = v.leggiIntero("Inserisci l'id del pianeta da cancellare");
+				if (!pCRUD.leggi().isEmpty()) {
+					for (int i = 0; i < pCRUD.leggi().size(); i++) {
+						if(cancella == pCRUD.leggi(i).getId()) {
+							System.out.println(pCRUD.leggi(i).toString());
+							trovato = true;
+							String conferma = v.leggiStringa("Vuoi cancellare");
+							if(conferma.equalsIgnoreCase("si")) {
+								pCRUD.cancella(i);
+								break;
+							}
+						}
+					}
+					if(!trovato) {
+						System.out.println("Nessun id corrispondente");
+					}
+				}
+				break;
+			case 5:
+				v.stampaScheda(pCRUD.leggi());
+				break;
+			case 6:
+				if (!pCRUD.leggi().isEmpty()) {
+					int ricerca = v.leggiIntero("Inserisci l'id del pianeta da cercare");
+					for (int i = 0; i < pCRUD.leggi().size(); i++) {
+						if(ricerca == pCRUD.leggi(i).getId()) {
+							trovato = true;
+							System.out.println(pCRUD.leggi().toString());
+							break;
+						}
+					}
+					if(!trovato) {
+						System.out.println("Nessun id corrispondente");
+					}
+				}
+				break;
+			case 7:
+				exit = false;
+				break;
+
+			default:
+				System.out.println("Valore inaspettato, inserisci un numero compreso nel menu...");
+				break;
+			}
+		} while (exit);
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;model.IVideoGame&apos; to &apos;IVideoGameCRUD&apos;&#x0D;&#x0A;- Original project: &apos;Gestione_VideoGiochi&apos;&#x0D;&#x0A;- Original element: &apos;model.IVideoGame&apos;&#x0D;&#x0A;- Renamed element: &apos;model.IVideoGameCRUD&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;IVideoGame&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;model{IVideoGame.java[IVideoGame" matchStrategy="1" name="IVideoGameCRUD" qualified="false" references="true" similarDeclarations="false" stamp="1623937081949" textual="false" version="1.0"/>
+</session>

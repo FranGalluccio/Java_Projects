@@ -1,0 +1,128 @@
+package view;
+
+import java.util.Scanner;
+
+import model.Animale;
+import model.Cane;
+import model.DelfinoCurioso;
+import model.Uccello;
+
+public class Vista implements IVista{
+	Scanner input = new Scanner(System.in);
+
+	@Override
+	public String leggiStringa(String stringa) {
+		System.out.println(stringa);
+		return input.nextLine();
+	}
+
+	public char leggiChar(String stringa) {
+		stringa = leggiStringa(stringa);
+		char carattere = stringa.charAt(0);
+		if(carattere == 'M') {
+			System.out.println("Maschio");
+		}
+		else if(carattere == 'F') {
+			System.out.println("Femmina");
+		}
+		return carattere;
+	}
+
+	@Override
+	public int leggiIntero(String stringa) {
+		boolean flagi;
+		int intero = 0;
+		do {
+			flagi = false;
+			try {
+				System.out.println(stringa);
+				intero = Integer.parseInt(input.nextLine());
+			} catch (NumberFormatException e) {
+				System.out.println("Inserire un valore numerico intero");
+				flagi = true;
+			}
+		}while (flagi);
+		return intero;
+	} 
+
+	@Override
+	public double leggiDouble(String stringa) {
+		boolean flagd;
+		double doubl = 0;
+		do {
+			flagd = false;
+			try {
+				System.out.println(stringa);
+				doubl = Double.parseDouble(input.nextLine());
+			} catch (NumberFormatException e) {
+				System.out.println("Inserire un valore numerico intero");
+				flagd = true;
+			}
+		}while (flagd);
+		return doubl;
+	}
+
+	@Override
+	public boolean leggiBoolean(String stringa) {
+		String s = leggiStringa(stringa);
+		boolean flag = false;
+		if(s.equalsIgnoreCase("si"))
+			flag = true;
+		else if (s.equalsIgnoreCase("no")){
+			flag = false;
+		}
+		return flag;
+	}
+
+	public void inserimento(Animale a) {
+		if (a instanceof Cane) {
+			((Cane) a).setColore(leggiStringa("Inserisci il colore: "));
+			((Cane) a).setRazza(leggiStringa("Inserisci razza: "));
+			((Cane) a).setSesso(leggiChar("Maschio o Femmina?"));
+			((Cane) a).setVaccinato(leggiBoolean("Vaccinato?"));
+		}
+		else if (a instanceof Uccello) {
+			((Uccello) a).setAperturaAlare(leggiIntero("Inserisci apertura alare"));
+			((Uccello) a).setRazza(leggiStringa("Inserisci razza: "));
+			((Uccello) a).setVelocita(leggiIntero("Inserisci velocita: "));
+		}
+		else if (a instanceof DelfinoCurioso) {
+			((DelfinoCurioso) a).setLunghezza(leggiDouble("Inserisci lunghezza"));
+			((DelfinoCurioso) a).setMoltoCurioso(leggiBoolean("Curioso?"));
+			((DelfinoCurioso) a).setNome(leggiStringa("Inserisci nome: "));
+		}
+	}
+
+	public void modificaDipendente(Animale a) {
+		if (a instanceof Cane) {
+			System.out.println("Colore: " + ((Cane) a).getColore());
+			((Cane) a).setColore(leggiStringa("Inserisci nuovo colore: "));
+
+			System.out.println("Razza: " + ((Cane) a).getRazza());
+			((Cane) a).setRazza(leggiStringa("Inserisci nuova razza: "));
+
+			System.out.println("Sesso: " + ((Cane) a).getSesso());
+			((Cane) a).setSesso(leggiChar("Inserisci nuovo sesso: "));
+		}
+		else if (a instanceof Uccello) {
+			System.out.println("Apertura alare: " + ((Uccello) a).getAperturaAlare());
+			((Uccello) a).setAperturaAlare(leggiIntero("Inserisci nuova apertura alare: "));
+
+			System.out.println("Razza: " + ((Uccello) a).getRazza());
+			((Uccello) a).setRazza(leggiStringa("Inserisci nuova razza: "));
+
+			System.out.println("Velocità: "	+ ((Uccello) a).getVelocita());
+			((Uccello) a).setVelocita(leggiIntero("Inserisci nuova velocità: "));
+		}
+		else if (a instanceof DelfinoCurioso) {
+			System.out.println("Lunghezza: " + ((DelfinoCurioso) a).getLunghezza());
+			((DelfinoCurioso) a).setLunghezza(leggiIntero("Inserisci nuova lunghezza: "));
+			
+			System.out.println("Nome: " + ((DelfinoCurioso) a).getNome());
+			((DelfinoCurioso) a).setNome(leggiStringa("Inserisci nuovo nome: "));
+			
+			System.out.println("Curioso!? " + ((DelfinoCurioso) a).isMoltoCurioso());
+		}
+	}
+
+}

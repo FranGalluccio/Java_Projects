@@ -1,0 +1,99 @@
+package controller;
+
+import model.Dipendente;
+import model.Dirigente;
+import model.Manager;
+import model.Persona;
+import model.PersonaCRUD;
+import view.Vista;
+
+public class Avvio {
+
+	public static void main(String[] args) {
+
+		PersonaCRUD personatoList = new PersonaCRUD();
+
+		Persona persona = null;
+
+		boolean exit = true;
+
+		Vista v = new Vista();
+
+		boolean trovato;
+
+		do {
+			int scelta = v.leggiIntero("1) inserisci \n2) modifica \n3) stampa \n4) cancella");
+			switch(scelta) {
+			case 1:
+				int sceltaInserimento = v.leggiIntero("1) inserisci dipendente, 2) inserisci manager, 3) inserisci dirigente");
+				switch(sceltaInserimento) {
+				case 1:
+					persona = new Dipendente();
+					v.inserimento(persona);
+					personatoList.inserisci(persona);
+					break;
+				case 2:
+					persona = new Manager();
+					v.inserimento(persona);
+					personatoList.inserisci(persona);
+					break;
+				case 3:
+					persona = new Dirigente();
+					v.inserimento(persona);
+					personatoList.inserisci(persona);
+					break;
+				}
+				break;
+			case 2:
+				if(!personatoList.leggi().isEmpty()) {
+					int res1 = v.leggiIntero("Cerca per id");
+					trovato = false;
+					for (int i = 0; i < personatoList.leggi().size(); i++) {
+						if(res1 == personatoList.leggi(i).getId()) {
+							trovato = true;
+							System.out.println("Personale presente : " + personatoList.leggi(i).toString());
+							Persona personaCopy = v.duplica(personatoList.leggi(i));
+							v.modifica(personaCopy);
+							String modifica = v.leggiStringa("Sei sicuro di voler modificare il Personale? si/no");
+							if(modifica.equalsIgnoreCase("si"))
+								personatoList.modifica(i, personaCopy);
+							break;
+						}
+					}
+					if(!trovato) {
+						System.out.println("Personale non presente");
+					}
+				}else {
+					System.out.println("Nessun Personale presente");
+				}
+				break;
+			case 3:
+				for (Persona element : personatoList.leggi()) {
+					System.out.println(element.toString());
+				}
+				break;
+			case 4:
+				if(!personatoList.leggi().isEmpty()) {
+					int res1 = v.leggiIntero("Cerca per id");
+					trovato = false;
+					for (int i = 0; i < personatoList.leggi().size(); i++) {
+						if(res1 == personatoList.leggi(i).getId()) {
+							trovato = true;
+							System.out.println("Personale presente : " + personatoList.leggi(i).toString());
+							String modifica = v.leggiStringa("Sei sicuro di voler eliminare il Personale? si/no");
+							if(modifica.equalsIgnoreCase("si"))
+								personatoList.cancella(i);
+							break;
+						}
+					}
+					if(!trovato) {
+						System.out.println("Personale non presente");
+					}
+				}else {
+					System.out.println("Nessun Personale presente");
+				}
+				break;
+			}
+		} while(exit);
+	}
+}

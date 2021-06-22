@@ -1,0 +1,184 @@
+package view;
+
+import java.util.Scanner;
+
+import model.Dipendente;
+import model.Dirigente;
+import model.Manager;
+import model.Persona;
+
+public class Vista {
+
+	Scanner input = new Scanner(System.in);
+
+	public String leggiStringa(String stringa) {
+		System.out.println(stringa);
+		return input.nextLine();
+	}
+
+	public int leggiIntero(String stringa) {
+		boolean flagInt;
+		int leggiIntero = 0;
+		do {
+			flagInt = false;
+			try {
+				System.out.println(stringa);
+				leggiIntero = Integer.parseInt(input.nextLine());
+			}catch(NumberFormatException e) {
+				System.out.println("Inserire un valore numerico");
+				flagInt = true;
+			}
+		}while(flagInt);
+		return leggiIntero;
+	}
+
+	public double leggiDouble(String stringa) {
+		boolean flagDouble;
+		double leggiDouble = 0;
+		do {
+			flagDouble = false;
+			try {
+				System.out.println(stringa);
+				leggiDouble = Double.parseDouble(input.nextLine());
+			}catch(NumberFormatException e) {
+				System.out.println("Inserire un valore numerico");
+				flagDouble = true;
+			}
+		}while(flagDouble);
+		return leggiDouble;
+	}
+
+	public Persona setPersona(Persona persona) {
+		Persona p = new Persona(leggiIntero("Inserisci id: "), leggiStringa("Inserisci nome: "), leggiStringa("Inserisci cognome: "), leggiStringa("Inserisci luogo di nascita"),
+				leggiStringa("Inserisci sesso"), leggiStringa("Inserisci codice fiscale"));
+		return p;
+	}
+
+	public void inserimento(Persona persona) {
+		if(persona != null) {
+			if(persona instanceof Dirigente) {
+				setPersona(persona);
+				((Dirigente) persona).setAreaDiResponsabilita(leggiStringa("Inserisci Area Di Responsabilità: "));
+				((Dirigente) persona).setStipendio(leggiDouble("Inserisci Stipendio"));
+				((Dirigente) persona).setRuoloAziendale(leggiStringa("Inserisci Ruolo Aziendale"));
+				((Dirigente)persona).setLivelloFunzionale(leggiStringa("Inserisci livello Funzionale: "));
+
+			}else if(persona instanceof Manager){
+				setPersona(persona);
+				((Manager) persona).setStipendio(leggiDouble("Inserisci Stipendio"));
+				((Manager) persona).setRuoloAziendale(leggiStringa("Inserisci Ruolo Aziendale"));
+				((Manager)persona).setAreaDiResponsabilita(leggiStringa("Inserisci Area di Resposabilità: "));
+			}
+			else if (persona instanceof Dipendente){
+				setPersona(persona);
+				((Dipendente) persona).setStipendio(leggiDouble("Inserisci Stipendio: "));
+				((Dipendente) persona).setRuoloAziendale(leggiStringa("Inserisci Ruolo Aziendale"));
+			}
+		}
+	}
+	
+	public void modificaPersona(Persona persona) {
+		String s;
+		int i = 0;
+		i = leggiIntero("Id [" + persona.getId() + "]: ");
+		if(i != 0) {
+			persona.setId(i);
+		}
+		s = leggiStringa("Nome [" + persona.getNome() + "]: ");
+		if(s != "") {
+			persona.setNome(s);
+		}
+		s = leggiStringa("Cognome [" + persona.getCognome() + "]: ");
+		if(s != "") {
+			persona.setCognome(s);
+		}
+		s = leggiStringa("Luogo di Nascita [" + persona.getLuogoDiNascita() + "]: ");
+		if(s != "") {
+			persona.setLuogoDiNascita(s);
+		}
+		s = leggiStringa("Codice Fiscale [" + persona.getCodiceFiscale() + "]: ");
+		if(s != "") {
+			persona.setCodiceFiscale(s);
+		}
+	}
+	
+	public void modifica(Persona persona) {
+		String s;
+		int i = 0;
+		if(persona instanceof Dirigente) {
+			modificaPersona(persona);
+			s = leggiStringa("Inserisci Ruolo Aziendale [" + ((Dirigente)persona).getRuoloAziendale() + "]: ");
+			if(s != "") {
+				((Dirigente)persona).setRuoloAziendale(s);
+			}
+			i = leggiIntero("Inserisci Stipendio [" + ((Dirigente)persona).getStipendio() + "]: ");
+			if(i != 0) {
+				((Dirigente)persona).setStipendio(i);
+			}
+			s = leggiStringa("Area Di Responsabilità [" + ((Dirigente)persona).getAreaDiResponsabilita() + "]: ");
+			if(s != "") {
+				((Dirigente)persona).setAreaDiResponsabilita(s);
+			}
+			s = leggiStringa("Livello funzionale [" + ((Dirigente)persona).getLivelloFunzionale() + "]: ");
+			if(s != "") {
+				((Dirigente)persona).setLivelloFunzionale(s);
+			}
+		}
+		else if (persona instanceof Manager) {
+			modificaPersona(persona);
+			i = leggiIntero("Inserisci Stipendio [" + ((Manager)persona).getStipendio() + "]: ");
+			if(i != 0) {
+				((Manager)persona).setStipendio(i);
+			}
+			s = leggiStringa("Inserisci Ruolo Aziendale [" + ((Manager)persona).getRuoloAziendale() + "]: ");
+			if(s != "") {
+				((Manager)persona).setRuoloAziendale(s);
+			}
+			s = leggiStringa("Area Di Responsabilità [" + ((Manager)persona).getAreaDiResponsabilita() + "]: ");
+			if(s != "") {
+				((Manager)persona).setAreaDiResponsabilita(s);
+			}
+		}
+		else if (persona instanceof Dipendente) {
+			modificaPersona(persona);
+			i = leggiIntero("Inserisci Stipendio [" + ((Dipendente)persona).getStipendio() + "]: ");
+			if(i != 0) {
+				((Dipendente)persona).setStipendio(i);
+			}
+			s = leggiStringa("Area Di Responsabilità [" + ((Dipendente)persona).getRuoloAziendale() + "]: ");
+			if(s != "") {
+				((Dipendente)persona).setRuoloAziendale(s);
+			}
+			
+		}
+	}
+	
+	public void stampaSchedaPersona(Persona persona) {
+		System.out.println("\nId = " + persona.getId() + 
+				" Nome = " + persona.getNome() + 
+				" Cognome = " + persona.getCognome() + 
+				" Luogo di nascita = " + persona.getLuogoDiNascita() + 
+				" Sesso = " + persona.getSesso() + 
+				" Codice Fiscale = " + persona.getCodiceFiscale()); 
+	}
+	
+	public void stampaScheda(Persona persona) {
+		if(persona instanceof Dirigente) {
+			stampaSchedaPersona(persona);
+			System.out.println(((Dirigente) persona).getRuoloAziendale());
+			System.out.println(((Dirigente) persona).getStipendio());
+			System.out.println(((Dirigente)persona).getLivelloFunzionale());
+			System.out.println(((Dirigente)persona).getAreaDiResponsabilita());
+		}
+		else if(persona instanceof Manager) {
+			stampaSchedaPersona(persona);
+			System.out.println(((Manager) persona).getRuoloAziendale());
+			System.out.println(((Manager) persona).getStipendio());
+			System.out.println(((Manager)persona).getAreaDiResponsabilita());
+		}else if(persona instanceof Dipendente) {
+			stampaSchedaPersona(persona);
+			System.out.println(((Dipendente) persona).getStipendio());
+			System.out.println(((Dipendente) persona).getRuoloAziendale());
+		}
+	}
+}

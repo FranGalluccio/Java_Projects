@@ -1,0 +1,113 @@
+package model;
+
+import java.util.Date;
+
+public class Pianeta {
+
+	private int id;
+	private String nome;
+	private double massa;
+	private boolean abitato;
+	private String colore;
+	private double temperatura;
+	private Date dataScoperta;
+	
+	public Pianeta(int id, String nome, double massa, boolean abitato, String colore, double temperatura, Date dataScoperta) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.massa = massa;
+		this.abitato = abitato;
+		this.colore = colore;
+		this.temperatura = temperatura;
+		this.dataScoperta = dataScoperta;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public double getMassa() {
+		return massa;
+	}
+	public void setMassa(double massa) {
+		this.massa = massa;
+	}
+	public boolean isAbitato() {
+		return abitato;
+	}
+	public void setAbitato(boolean abitato) {
+		this.abitato = abitato;
+	}
+	public String getColore() {
+		return colore;
+	}
+	public void setColore(String colore) {
+		this.colore = colore;
+	}
+	public double getTemperatura() {
+		return temperatura;
+	}
+	public void setTemperatura(double temperatura) {
+		this.temperatura = temperatura;
+	}
+	public Date getDataScoperta() {
+		return dataScoperta;
+	}
+	public void setDataScoperta(Date dataScoperta) {
+		this.dataScoperta = dataScoperta;
+	}
+	@Override
+	public String toString() {
+		return nome + "," + massa + "," + abitato + "," + colore
+				+ "," + temperatura + "," + dataScoperta;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (abitato ? 1231 : 1237);
+		result = prime * result + ((colore == null) ? 0 : colore.hashCode());
+		result = prime * result + ((dataScoperta == null) ? 0 : dataScoperta.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(massa);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		temp = Double.doubleToLongBits(temperatura);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pianeta other = (Pianeta) obj;
+		if (abitato != other.abitato)
+			return false;
+		if (colore == null) {
+			if (other.colore != null)
+				return false;
+		} else if (!colore.equals(other.colore))
+			return false;
+		if (dataScoperta == null) {
+			if (other.dataScoperta != null)
+				return false;
+		} else if (!dataScoperta.equals(other.dataScoperta))
+			return false;
+		if (Double.doubleToLongBits(massa) != Double.doubleToLongBits(other.massa))
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		if (Double.doubleToLongBits(temperatura) != Double.doubleToLongBits(other.temperatura))
+			return false;
+		return true;
+	}
+}

@@ -1,0 +1,29 @@
+package model;
+
+public class Dirigente extends Persona {
+
+	private String livelloFunzionale;
+
+	public Dirigente(int id, String nome, String cognome, String luogoDiNascita, String sesso, String codiceFiscale, String livelloFunzionale) {
+		super(id, nome, cognome, luogoDiNascita, sesso, codiceFiscale);
+		this.livelloFunzionale = livelloFunzionale;
+	}
+
+	public String getLivelloFunzionale() {
+		return livelloFunzionale;
+	}
+
+	public void setLivelloFunzionale(String livelloFunzionale) {
+		this.livelloFunzionale = livelloFunzionale;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + "," + livelloFunzionale + "]";
+	}
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,70 @@
+package model;
+
+public class Uccello extends Animale{
+
+	private int velocita;
+	private int aperturaAlare;
+	private String razza;
+
+	public Uccello () {
+	}
+	public Uccello (double pesoAnimale, String habitat, String dieta) {
+		super();
+	}
+	public Uccello(double pesoAnimale, String habitat, String dieta, int velocita, int aperturaAlare, String razza) {
+		super("Uccello", pesoAnimale, habitat, dieta);
+	}
+	public int getVelocita() {
+		return velocita;
+	}
+	public void setVelocita(int velocita) {
+		this.velocita = velocita;
+	}
+	public int getAperturaAlare() {
+		return aperturaAlare;
+	}
+	public void setAperturaAlare(int aperturaAlare) {
+		this.aperturaAlare = aperturaAlare;
+	}
+	public String getRazza() {
+		return razza;
+	}
+	public void setRazza(String razza) {
+		this.razza = razza;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + velocita + "," + aperturaAlare + "," + razza;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + aperturaAlare;
+		result = prime * result + ((razza == null) ? 0 : razza.hashCode());
+		result = prime * result + velocita;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Uccello other = (Uccello) obj;
+		if (aperturaAlare != other.aperturaAlare)
+			return false;
+		if (razza == null) {
+			if (other.razza != null)
+				return false;
+		} else if (!razza.equals(other.razza))
+			return false;
+		if (velocita != other.velocita)
+			return false;
+		return true;
+	}
+
+}

@@ -1,0 +1,11 @@
+package model;
+
+public class Pianeta {
+
+	private String nome;
+	private double massa;
+	private boolean abitato;
+	private string colore;
+	private double temperatura;
+	private Date dataScoperta;
+}

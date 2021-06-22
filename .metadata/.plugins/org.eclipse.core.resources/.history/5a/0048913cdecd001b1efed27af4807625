@@ -1,0 +1,8 @@
+package view;
+
+public interface IVista {
+	
+	public String leggiStringa();
+	public double leggiDouble();
+	public int leggiIntero();
+}

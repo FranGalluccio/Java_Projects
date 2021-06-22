@@ -1,0 +1,40 @@
+package model;
+
+public class Persona {
+
+	private String nome;
+	private String cognome;
+	private int anni;
+	
+	public Persona() {
+	}
+	public Persona(String nome, String cognome, int anni) {
+		this.nome = nome;
+		this.cognome = cognome;
+		this.anni = anni;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+	public void setIndirizzo(int anni) {
+		this.anni = anni;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public String getCognome() {
+		return cognome;
+	}
+	public int getIndirizzo() {
+		return anni;
+	}
+	
+	@Override
+	public String toString() {
+		return nome + "," + cognome + "," + anni;
+	}
+}

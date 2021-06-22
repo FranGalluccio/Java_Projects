@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <style type="text/css">
+    
+        body{
+            background-color:deepskyblue
+            color: black;
+        }
+        
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+    <body>
+ 
+    <form id = "form" action="Login">
+        <label>Username</label>
+        <input type = "text" id = "input-user" name = "username" placeholder = "Inserisci username"><br>
+        <small id = "user-small"></small>
+        <br>
+        <br>      
+        <label>Password</label>
+        <input type = "password" id = "input-psw" name = "password" placeholder = "Inserisci password"><br>
+	   <small id = "psw-small"></small><br><br>
+	
+	   <button id = "button-login" type = "button">Accedi</button>   			
+    </form>
+    
+    <script>
+
+			function validazioneDati()
+			{
+				var inserito = "";
+                var boolUser = true;
+				var boolPsw = true;
+                
+				inserito = $("#input-user").val();
+				if(inserito === ""){
+					$("#input-user").css({"background-color": "red"});				
+                    $("#user-small").html("Username e' un campo obbligatorio!");
+                    boolUser = false;
+				}
+				
+                inserito = $("#input-psw").val();
+               	if(inserito === "")
+				{
+					$("#input-psw").css({"background-color": "red"});	
+                    $("#psw-small").html("Password e' un campo obbligatorio!");
+                    boolPsw = false;
+				}
+				
+                if(boolUser && boolPsw)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+			}
+           
+			$("#button-login").click(function()
+            {
+				if(validazioneDati())
+                {
+                    $("#form").submit();
+                }
+			});
+            
+            $("#input-user").click(function()
+            {
+                inserito = $("#input-user").val();
+                if(inserito === "")
+				{
+					$("#input-user").css({"background-color": "white"});
+                    $("#user-small").html("");
+				}
+            });
+            
+            
+            $("#input-psw").click(function()
+            {
+                inserito = $("#input-psw").val();
+                if(inserito === "")
+				{
+					$("#input-psw").css({"background-color": "white"});
+                    $("#psw-small").html("");
+				}
+            });
+        
+    </script>
+        
+    </body>
+
+
+</html>

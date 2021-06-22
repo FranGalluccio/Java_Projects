@@ -1,0 +1,30 @@
+package model;
+
+public class DelfinoCurioso extends Animale{
+
+	boolean moltoCurioso;
+	private String nome;
+	private double lunghezza;
+	@Override
+	public double getPesoAnimale() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public String getTipoAnimale() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String getHabitat() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String getDieta() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+}

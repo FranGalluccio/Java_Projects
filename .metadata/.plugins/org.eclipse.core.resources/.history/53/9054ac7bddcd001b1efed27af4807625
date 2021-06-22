@@ -1,0 +1,7 @@
+package model;
+
+public class DelfinoCurioso {
+
+	boolean moltoCurioso;
+	private String nome;
+}

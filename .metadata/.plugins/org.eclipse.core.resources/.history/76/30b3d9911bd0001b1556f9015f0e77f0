@@ -1,0 +1,52 @@
+package controller;
+
+import model.Persona;
+import model.PersonaCRUD;
+import view.Vista;
+
+public class Avvio {
+
+	public static void main(String[] args) {
+
+		PersonaCRUD personatoList = new PersonaCRUD();
+
+		Persona persona = null;
+
+		boolean exit = false;
+
+		Vista v = new Vista();
+
+		do {
+			int scelta = v.leggiIntero("1) inserisci \\n2) modifica");
+			switch(scelta) {
+			case 1:
+				v.inserimento(persona);
+				personatoList.inserisci(persona);
+				break;
+			case 2:
+				String res1 = v.leggiStringa("Cerca per codice fiscale");
+
+				if(!personatoList.leggi().isEmpty()) {
+					for (int i = 0; i < personatoList.leggi().size(); i++) {
+						if(res1.equalsIgnoreCase(personatoList.leggi(i))) {
+							System.out.println("Personale presente : " + personatoList.leggi(i).toString());
+							trovato = true;
+						}
+						if(trovato) {
+							String modifica = v.leggiStringa("Sei sicuro di voler modificare il Personale? si/no");
+							if(modifica.equalsIgnoreCase("si"))
+								v.modifica(persona[i]);
+							break;
+						}
+						if(!trovato) {
+							System.out.println("Personale non presente");
+						}
+					}
+				}else {
+					System.out.println("Nessun Personale presente");
+				}
+				break;
+			}
+		} while(exit);
+	}
+}

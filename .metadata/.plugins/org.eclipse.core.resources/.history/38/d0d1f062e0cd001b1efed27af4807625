@@ -1,0 +1,55 @@
+package model;
+
+public class Cane extends Animale {
+	
+	
+	
+	public Cane() {
+		super(tipoAnimale, pesoAnimale, dieta, );
+	}	
+	public String getRazza() {
+		return razza;
+	}
+	public void setRazza(String razza) {
+		this.razza = razza;
+	}
+	public String getColore() {
+		return colore;
+	}
+	public void setColore(String colore) {
+		this.colore = colore;
+	}
+	public boolean isVaccinato() {
+		return vaccinato;
+	}
+	public void setVaccinato(boolean vaccinato) {
+		this.vaccinato = vaccinato;
+	}
+	public char getSesso() {
+		return sesso;
+	}
+	public void setSesso(char sesso) {
+		this.sesso = sesso;
+	}
+	private String razza;
+	private String colore;
+	boolean vaccinato;
+	char sesso;
+	@Override
+	public double getPesoAnimale() {
+		return 0;
+	}
+	@Override
+	public String getTipoAnimale() {
+		return "Cane";
+	}
+	@Override
+	public String getHabitat() {
+		return "Casa";
+	}
+	@Override
+	public String getDieta() {
+		return "Onnivoro";
+	}
+
+}
