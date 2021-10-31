@@ -25,6 +25,7 @@ public class Test {
 		driver.manage().timeouts().getScriptTimeout();
 		Thread.sleep(4000);
 		
+		//DropDown Select
 		Select dropDwn = new Select(driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[2]/div[2]/span/select")));
 		dropDwn.selectByVisibleText("Price (high to low)");	
 		Thread.sleep(4000);
